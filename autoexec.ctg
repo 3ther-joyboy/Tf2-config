@@ -1,0 +1,228 @@
+//                 ____  _   _    _      _____      
+//                |___ \| | | |  | |    |  __ \     
+//                  __) | |_| |__| | ___| |__) |    
+//                 |__ <| __|  __  |/ _ \  _  /     
+//                 ___) | |_| |  | |  __/ | \ \     
+//                |____/ \__|_|  |_|\___|_|  \_\    
+//            ______                         ______ 
+//           |______|                       |______|
+//          
+
+
+//     ============================================================
+//     ====================== UN-COMMON KEYS ======================
+//     ============================================================
+
+//          ===== MOUSE BUTTONS =====
+// left click         =>        mouse1
+// right click        =>        mouse2
+// wheel click        =>        mouse3
+// back click         =>        mouse4
+// forward click      =>        mouse5
+// scroll up 	        =>        mwheelup
+// scroll down 	      =>        mwheeldown 
+
+//          ======== KEYBOARD ========
+// print screen             [can not be bount]
+// scroll lock        =>        scrolllock
+// pause / brake      =>        numlock
+// insert             =>        ins
+// home               =>        home
+// page up            =>        pgup
+// delete             =>        del
+// end                =>        end
+// page down          =>        pgdn
+
+// arrow up           =>        uparrow
+// arrow left         =>        leftarrow
+// arrow down         =>        downarrow
+// arrow right        =>        rightarrow
+
+// left shift         =>        shift
+// right shift        =>        rshift
+// left ctrl          =>        ctrl
+// right ctrl         =>        rctrl
+// capslock           =>        capslock
+// tabulator          =>        tab
+// left alt           =>        alt
+// right alt          =>        ralt
+// left super         =>        lwin
+// right super        =>        rwin
+// <= backspace       =>        backspace
+// escape             =>        escape
+// fn / menu               [can not be bount]
+
+
+//          ========= NUMPAD =========
+// /                  =>        kp_slash
+// *                  =>        kp_multiply
+// -                  =>        kp_minus
+// +                  =>        kp_plus
+// enter              =>        kp_enter
+// , / delete         =>        kp_del
+// 0 / insert         =>        kp_ins
+// 1 / end            =>        kp_end
+// 2                  =>        kp_downarrow
+// 3 / page down      =>        kp_pgdn
+// 4                  =>        kp_leftarrow
+// 5                  =>        kp_5
+// 6                  =>        kp_rightarrow
+// 7 / home           =>        kp_home
+// 8                  =>        kp_uparrow
+// 9 / page up        =>        kp_pgup
+        
+//     =====================================================================================
+//     =====================================================================================
+//     ===================================== AUTO EXEC =====================================
+//     =====================================================================================
+//     =====================================================================================
+mat_phong 0
+fps_max 120
+TF_USE_MIN_VIEWMODELS 1
+cl_autoreload 1
+hud_combattext_batching_window 50
+hud_combattext_batching 1
+mat_picmip -10
+fov 90
+viewmodel_fov 54
+cl_mouselook 1
+//             mat_picmip = 2 worst       grafic -10 the best
+//     ========================================
+//     =============== CONTROLS ===============
+//     ========================================
+
+
+bind "," "changeclass"
+bind "." "changeteam"
+bind "j" "explode"
+bind "k" "kill"
+
+bind "m" "pinventory"
+bind "del" "pinventory"
+alias "pinventory" "open_charinfo_direct"
+
+bind "end" "inventory"
+alias "inventory" "open_charinfo_backpack"
+
+bind "ins" "loadoutA"
+bind "home" "loadoutB"
+bind "pgup" "loadoutC"
+bind "pgdn" "loadoutD"
+alias "loadoutA" "load_itempreset 0;echo loadout 1 ;"
+alias "loadoutB" "load_itempreset 1;echo loadout 2 ;"
+alias "loadoutC" "load_itempreset 2;echo loadout 3 ;"
+alias "loadoutD" "load_itempreset 3;echo loadout 4 ;"
+
+
+bind C "+showscores"
+bind X "+taunt" 
+
+bind "1" "slot4"
+bind "2" "slot1;show;cl_crosshair_file crosshair5;cl_crosshair_scale 15"
+bind "3" "slot2;show;cl_crosshair_file crosshair4;cl_crosshair_scale 30"
+bind "4" "slot3;r_drawviewmodel 1;cl_crosshair_file default;cl_crosshair_scale 15"
+alias "show" "r_drawviewmodel 1;wait 10;r_drawviewmodel 0"
+
+//     shooting and stuff
+
+bind "mouse1" "+attack"
+bind "mouse2" "+attack2"
+bind "mouse4" ""
+bind "mouse5" ""
+
+bind "alt" "special;attack3"
+alias "special" "+use_action_slot_item"
+
+//     movment
+bind "mwheeldown" "+jump"
+bind "space" "+jump"
+bind "y" "+duck"
+alias "+cjump" "+jump;+duck"
+alias "-cjump" "-jump;-duck"
+
+
+// null movment binds
+bind e +mfwd
+bind s +mleft
+bind d +mback
+bind f +mright
+
+alias +mfwd "-back;+forward;alias checkfwd +forward"
+alias +mback "-forward;+back;alias checkback +back"
+alias +mleft "-moveright;+moveleft;alias checkleft +moveleft"
+alias +mright "-moveleft;+moveright;alias checkright +moveright"
+alias -mfwd "-forward;checkback;alias checkfwd none"
+alias -mback "-back;checkfwd;alias checkback none"
+alias -mleft "-moveleft;checkright;alias checkleft none"
+alias -mright "-moveright;checkleft;alias checkright none"
+alias checkfwd none
+alias checkback none
+alias checkleft none
+alias checkright none
+alias none ""
+
+
+
+
+
+// crafting
+
+// bind "T" "+yesno"
+// alias +yesno "wait 30;vc_no;"
+// alias yesno "vc_yes"
+// alias -yesno ""
+// 
+// bind "G" "vc_medic"
+// bind "V" "vc_spy"
+
+
+
+//     voice commands
+
+bind "w" +voicelines
+alias +voicelines "bind "T" "vc_go";bind "G" "vc_help";bind "V" "vc_sentry_ahed";bind "r" "vc_no""
+alias -voicelines "bind "T" "vc_tx";bind "G" "vc_medic";bind "V" "vc_spy";bind "r" "vc_yes""
+
+// bind "T" "vc_tx"
+// bind "G" "vc_medic"
+// bind "V" "vc_spy"
+// bind "r" "vc_yes"
+// crafting
+//     alias comunication
+alias "vc_medic" "voicemenu 0 0"
+alias "vc_tx" "voicemenu 0 1"
+alias "vc_go" "voicemenu 0 2"
+alias "vc_move" "voicemenu 0 3"
+alias "vc_go_left" "voicemenu 0 4"
+alias "vc_go_right" "voicemenu 0 5"
+alias "vc_yes" "voicemenu 0 6"
+alias "vc_no" "voicemenu 0 7"
+alias "vc_incoming" "voicemenu 1 0"
+alias "vc_spy" "voicemenu 1 1"
+alias "vc_sentry_ahed" "voicemenu 1 2"
+alias "vc_tele" "voicemenu 1 3"
+alias "vc_dispenser" "voicemenu 1 4"
+alias "vc_sentry" "voicemenu 1 5"
+alias "vc_activate_charge" "voicemenu 1 6"
+alias "vc_uber_redy" "voicemenu 1 7"
+alias "vc_help" "voicemenu 2 0"
+alias "vc_cry" "voicemenu 2 1"
+alias "vc_cheers" "voicemenu 2 2"
+alias "vc_jeers" "voicemenu 2 3"
+alias "vc_positive" "voicemenu 2 4"
+alias "vc_negative" "voicemenu 2 5"
+alias "vc_nice_shot" "voicemenu 2 6"
+alias "vc_gj" "voicemenu 2 7"
+
+
+// comunication
+bind Y "say"
+bind H "say_team"
+bind N "say_party"
+bind "mouse3" "+voicerecord"
+
+alias "pchat" "say_party"
+
+// cheat playground
+bind p "exec cheat"
+
