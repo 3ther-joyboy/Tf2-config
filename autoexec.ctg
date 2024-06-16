@@ -136,7 +136,7 @@ alias "special" "+use_action_slot_item"
 //     movment
 bind "mwheeldown" "+jump"
 bind "space" "+jump"
-bind "y" "+duck"
+bind "z" "+duck"
 alias "+cjump" "+jump;+duck"
 alias "-cjump" "-jump;-duck"
 
