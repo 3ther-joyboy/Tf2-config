@@ -223,6 +223,7 @@ bind "mouse3" "+voicerecord"
 
 alias "pchat" "say_party"
 
-// cheat playground
 bind p "exec cheat"
-
+exec numpad
+bind +kp_ins "exec classswitcher"
+bind -kp_ins "exec numpad"
