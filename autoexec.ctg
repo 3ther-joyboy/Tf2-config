@@ -76,7 +76,7 @@ echo "           |______|                       |______|"
 //     =====================================================================================
 //     =====================================================================================
 mat_phong 0
-fps_max 120
+// fps_max 120
 TF_USE_MIN_VIEWMODELS 1
 cl_autoreload 1
 hud_combattext_batching_window 50
@@ -84,7 +84,7 @@ hud_combattext_batching 1
 mat_picmip -10
 fov 90
 viewmodel_fov 54
-cl_mouselook 1
+// cl_mouselook 1
 //             mat_picmip = 2 worst       grafic -10 the best
 //     ========================================
 //     =============== CONTROLS ===============
