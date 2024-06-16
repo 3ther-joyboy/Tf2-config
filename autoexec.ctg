@@ -135,7 +135,7 @@ alias "special" "+use_action_slot_item"
 //     movment
 bind "mwheeldown" "+jump"
 bind "space" "+jump"
-bind "z" "+duck"
+bind "y" "+duck"
 alias "+cjump" "+jump;+duck"
 alias "-cjump" "-jump;-duck"
 
@@ -215,9 +215,9 @@ alias "vc_gj" "voicemenu 2 7"
 
 
 // comunication
-bind Y "say"
-bind H "say_team"
-bind N "say_party"
+bind z "say"
+bind h "say_team"
+bind n "say_party"
 bind "mouse3" "+voicerecord"
 
 alias "pchat" "say_party"
